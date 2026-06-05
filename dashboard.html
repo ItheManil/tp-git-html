@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Dashboard</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+.stats-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; padding:32px; }
+.stat-card { background:white; border-radius:8px; padding:24px;
+box-shadow:0 2px 8px rgba(0,0,0,.08); text-align:center; }
+.stat-value { font-size:2rem; font-weight:bold; color:#2563eb; }
+.stat-label { color:#64748b; margin-top:8px; }
+.stat-card.alert { border-left:4px solid #ef4444; }
+.stat-card.ok { border-left:4px solid #10b981; }
+.chart-bar { height:20px; background:#2563eb; border-radius:4px;
+margin:4px 0; transition:width .4s; }
+</style>
+</head>
+<body>
+<nav class="navbar">
+<span class="logo">MonSite</span>
+<ul>
+<li><a href="index.html">Accueil</a></li>
+<li><a href="dashboard.html" class="active">Dashboard</a></li>
+</ul>
+</nav>
+<main style="padding:48px 32px;">
+<h1>Dashboard de monitoring</h1>
+<p style="color:#64748b;">Mis a jour : <span id="last-update"></span></p>
+<div class="stats-grid">
+<div class="stat-card ok">
+<div class="stat-value" id="uptime">--</div>
+<div class="stat-label">Uptime (%)</div>
+</div>
+<div class="stat-card">
+<div class="stat-value" id="users">--</div>
+<div class="stat-label">Visiteurs actifs</div>
+</div>
+<div class="stat-card alert">
+
+TP Git Edition HTML / CSS / JS
+
+Git Practical Exercises 13
+<div class="stat-value" id="alerts">--</div>
+<div class="stat-label">Alertes detectees</div>
+</div>
+</div>
+<h2 style="padding:0 32px;">Charge reseau (simulation)</h2>
+<div id="chart" style="padding:0 32px 32px;"></div>
+</main>
+<script src="js/dashboard.js"></script>
+</body>
+</html>
